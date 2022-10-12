@@ -4,6 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+
 import java.io.*;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -17,7 +23,16 @@ public class HelloController {
     private ImageView picture;
 
     @FXML
+    private Button buttonBasic;
+
+    @FXML
+    private Button buttonFancy;
+
+    @FXML
     private Button buttonStart;
+
+    @FXML
+    private Button buttonClear;
 
     @FXML
     private Label labelTitle;
@@ -74,19 +89,40 @@ public class HelloController {
         List<Map.Entry<String, Integer>> list = sortByValueInDecreasingOrder(wordMap);
         Map<String, Integer> tableMap = wordMap;
         for (Map.Entry<String, Integer> entry : list) {
-           mapOutput.appendText( entry.getKey() + "  " + entry.getValue() + "\n");
+           mapOutput.appendText( entry.getKey() + "\t" + entry.getValue() + "\n");
         }
     }
-
     @FXML
     public void buttonStart(ActionEvent e1) {
         buttonStart.setOnAction(e -> {
+            mapOutput.setFont(Font.font("Britannic Bold", 30));
+            mapOutput.setText("Andrew Goodman" + "\n" + "Module 6 UI Design Assignment" + "\n" + "Prof. Walauskis");
+        });
+    }
+
+    @FXML
+    public void buttonClear(ActionEvent f1) {
+        buttonClear.setOnAction(e -> {
+            mapOutput.setText("");
+                });
+    }
+    @FXML
+    public void buttonFancy(ActionEvent g1) {
+        buttonFancy.setOnAction(e -> {
+            mapOutput.setFont(Font.font("Papyrus", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 30));
+            PoemReader();
+        });
+    }
+    @FXML
+    public void buttonBasic(ActionEvent h1) {
+        buttonBasic.setOnAction(e -> {
+            mapOutput.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 25));
             PoemReader();
         });
     }
 
     @FXML
-    public void buttonQuit(ActionEvent d) {
+    public void buttonQuit(ActionEvent d1) {
         System.exit(0);
     }
 }

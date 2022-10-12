@@ -13,8 +13,11 @@
          <left>
             <VBox prefHeight="289.0" prefWidth="128.0" style="-fx-background-color: #444450;" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="buttonStart" mnemonicParsing="false" onAction="#buttonStart" prefHeight="50.0" prefWidth="152.0" text="WORD FREQUENCY" />
-                  <Button fx:id="buttonQuit" mnemonicParsing="false" onAction="#buttonQuit" prefHeight="50.0" prefWidth="152.0" text="EXIT" />
+                  <Button fx:id="buttonBasic" mnemonicParsing="false" onAction="#buttonBasic" prefHeight="63.0" prefWidth="152.0" text="BASIC TEXT" />
+                  <Button fx:id="buttonFancy" mnemonicParsing="false" onAction="#buttonFancy" prefHeight="63.0" prefWidth="152.0" text="FANCY TEXT" />
+                  <Button fx:id="buttonClear" mnemonicParsing="false" onAction="#buttonClear" prefHeight="63.0" prefWidth="128.0" text="CLEAR BOARD" />
+                  <Button fx:id="buttonStart" mnemonicParsing="false" onAction="#buttonStart" prefHeight="63.0" prefWidth="152.0" text="CREDITS" />
+                  <Button fx:id="buttonQuit" mnemonicParsing="false" onAction="#buttonQuit" prefHeight="60.0" prefWidth="152.0" text="EXIT" />
                </children>
             </VBox>
          </left>
@@ -33,7 +36,7 @@
             <Point3D />
          </rotationAxis>
          <center>
-            <TextArea fx:id="mapOutput" prefHeight="100.0" prefWidth="275.0" BorderPane.alignment="CENTER_RIGHT">
+            <TextArea fx:id="mapOutput" prefHeight="100.0" prefWidth="275.0" wrapText="true" BorderPane.alignment="CENTER_RIGHT">
                <font>
                   <Font size="34.0" />
                </font>
