@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poemreadergui.HelloController">
    <children>
@@ -17,17 +13,8 @@
          <left>
             <VBox prefHeight="289.0" prefWidth="128.0" style="-fx-background-color: #444450;" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="59.0" prefWidth="153.0" text=" Edgar Allen Poe" textFill="WHITE">
-                     <font>
-                        <Font name="Britannic Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="200.0" fitWidth="142.0">
-                     <image>
-                        <Image url="@edgarallenpoe.jpg" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="buttonQuit" mnemonicParsing="false" onAction="#buttonQuit" prefHeight="54.0" prefWidth="167.0" text="EXIT" />
+                  <Button fx:id="buttonStart" mnemonicParsing="false" onAction="#buttonStart" prefHeight="50.0" prefWidth="152.0" text="WORD FREQUENCY" />
+                  <Button fx:id="buttonQuit" mnemonicParsing="false" onAction="#buttonQuit" prefHeight="50.0" prefWidth="152.0" text="EXIT" />
                </children>
             </VBox>
          </left>
@@ -46,13 +33,28 @@
             <Point3D />
          </rotationAxis>
          <center>
-            <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn fx:id="column1" prefWidth="242.0" text="WORD" />
-                <TableColumn fx:id="column2" prefWidth="239.0" text="FREQUENCY" />
-              </columns>
-            </TableView>
+            <TextArea fx:id="mapOutput" prefHeight="100.0" prefWidth="275.0" BorderPane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </TextArea>
          </center>
+         <right>
+            <VBox prefHeight="289.0" prefWidth="128.0" style="-fx-background-color: #444450;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="60.0" prefWidth="152.0" text=" Edgar Allen Poe" textFill="WHITE">
+                     <font>
+                        <Font name="Britannic Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="200.0" fitWidth="142.0">
+                     <image>
+                        <Image url="@edgarallenpoe.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>
