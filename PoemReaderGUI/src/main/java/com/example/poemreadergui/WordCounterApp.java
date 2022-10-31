@@ -8,9 +8,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/** *@author Andrew Goodman */
+/** *This is setting the scene for the application *@param WordCounterApp */
 public class WordCounterApp extends Application {
     Stage window;
 
+    /** *This is to set the scene using an FXML loader *@param start */
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -22,6 +25,9 @@ public class WordCounterApp extends Application {
         window.show();
     }
 
-    public static void main(String[] args) { launch();
+    /** *This is for launching the application *@param args */
+    public static void main(String[] args) {
+        /** *Launches the application */
+        launch();
     }
 }

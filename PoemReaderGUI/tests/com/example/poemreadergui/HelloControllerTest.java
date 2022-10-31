@@ -6,8 +6,6 @@ import java.io.*;
 import java.util.*;
 import java.util.regex.Pattern;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class HelloControllerTest {
 
     public static Map<String, Integer> poemMap(String fileName) {

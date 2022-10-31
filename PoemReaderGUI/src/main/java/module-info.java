@@ -1,4 +1,6 @@
+/** *This is the container for the word counter/frequency application */
 module com.example.poemreadergui {
+
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
