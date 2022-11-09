@@ -37,5 +37,12 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:23.0.0" level="project" />
+    <orderEntry type="library" name="mssql-jdbc-10.2.1.jre17" level="project" />
+    <orderEntry type="library" name="adaptive" level="project" />
+    <orderEntry type="library" name="mssql-jdbc-10.2.1.jre8" level="project" />
+    <orderEntry type="library" name="mysql.connector.java" level="project" />
+    <orderEntry type="library" name="mysql.connector.java" level="project" />
+    <orderEntry type="library" name="mysql.connector.java1" level="project" />
   </component>
 </module>

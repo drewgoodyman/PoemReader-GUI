@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.*;
 
 /** *@author Andrew Goodman */
 /** *This is setting the scene for the application *@param WordCounterApp */
@@ -29,5 +30,6 @@ public class WordCounterApp extends Application {
     public static void main(String[] args) {
         /** *Launches the application */
         launch();
+
     }
 }

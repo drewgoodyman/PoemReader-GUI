@@ -1,10 +1,6 @@
 <component name="libraryTable">
-  <library name="lib">
-    <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../JavaFX/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib" />
-      <root url="jar://$USER_HOME$/eclipse-workspace/SDLC-Assignment/jsoup-1.15.3.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../Valencia College/Summer-2022/Java Programming Class/JDBC connector/sqljdbc_10.2.1.0_enu/sqljdbc_10.2/enu/mssql-jdbc-10.2.1.jre17.jar!/" />
-    </CLASSES>
+  <library name="adaptive">
+    <CLASSES />
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/../../../Valencia College/Summer-2022/Java Programming Class/JDBC connector/sqljdbc_10.2.1.0_enu/sqljdbc_10.2/enu/samples/adaptive" />
@@ -17,6 +13,5 @@
       <root url="file://$PROJECT_DIR$/../../../Valencia College/Summer-2022/Java Programming Class/JDBC connector/sqljdbc_10.2.1.0_enu/sqljdbc_10.2/enu/samples/resultsets" />
       <root url="file://$PROJECT_DIR$/../../../Valencia College/Summer-2022/Java Programming Class/JDBC connector/sqljdbc_10.2.1.0_enu/sqljdbc_10.2/enu/samples/sparse" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/../../JavaFX/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib" recursive="false" />
   </library>
 </component>

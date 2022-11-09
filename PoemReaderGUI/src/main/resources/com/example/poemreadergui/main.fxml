@@ -13,6 +13,7 @@
          <left>
             <VBox prefHeight="289.0" prefWidth="128.0" style="-fx-background-color: #444450;" BorderPane.alignment="CENTER">
                <children>
+                  <Button fx:id="buttonDatabase" mnemonicParsing="false" onAction="#buttonDatabase" prefHeight="59.0" prefWidth="152.0" text="CONNECT TO DATABASE" textAlignment="CENTER" wrapText="true" />
                   <Button fx:id="buttonBasic" mnemonicParsing="false" onAction="#buttonBasic" prefHeight="63.0" prefWidth="152.0" text="BASIC TEXT" />
                   <Button fx:id="buttonFancy" mnemonicParsing="false" onAction="#buttonFancy" prefHeight="63.0" prefWidth="152.0" text="FANCY TEXT" />
                   <Button fx:id="buttonClear" mnemonicParsing="false" onAction="#buttonClear" prefHeight="63.0" prefWidth="128.0" text="CLEAR BOARD" />
@@ -36,7 +37,7 @@
             <Point3D />
          </rotationAxis>
          <center>
-            <TextArea fx:id="mapOutput" prefHeight="100.0" prefWidth="275.0" wrapText="true" BorderPane.alignment="CENTER_RIGHT">
+            <TextArea fx:id="mapOutput" editable="false" prefHeight="100.0" prefWidth="275.0" wrapText="true" BorderPane.alignment="CENTER_RIGHT">
                <font>
                   <Font size="34.0" />
                </font>

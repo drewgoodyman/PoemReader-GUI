@@ -9,6 +9,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 
 import java.io.*;
+import java.sql.*;
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -29,6 +30,10 @@ public class HelloController {
     /** *These are the interface buttons, pictures, labels for the scene builder *@param buttonFancy */
     @FXML
     private Button buttonFancy;
+
+    /** *These are the interface buttons, pictures, labels for the scene builder *@param buttonFancy */
+    @FXML
+    private Button buttonDatabase;
 
     /** *These are the interface buttons, pictures, labels for the scene builder *@param buttonStart */
     @FXML
@@ -79,7 +84,6 @@ public class HelloController {
         }
         return wordMap;
     }
-
     /** *This is the method that sorts the wordMap into descending order *@param wordMap */
     public static  List<Map.Entry<String, Integer>> sortByValueInDecreasingOrder(Map<String, Integer> wordMap) {
         Set<Map.Entry<String, Integer>> entries = wordMap.entrySet();
@@ -90,29 +94,51 @@ public class HelloController {
                 return (o2.getValue()).compareTo(o1.getValue());
             }
         });
-        return list.subList(1, 21);
+        return list.subList(1, 50);
     }
-
     /** *This is the program for counting word frequency within a file *@param PoemReader */
     public void PoemReader() {
-        /** This is the method that starts the word frequency and counts application */
-        Map<String, Integer> wordMap = poemMap("src/main/resources/com/example/poemreadergui/testingRaven.html");
-        List<Map.Entry<String, Integer>> list = sortByValueInDecreasingOrder(wordMap);
-        for (Map.Entry<String, Integer> entry : list) {
+        Connection connection;
+        try {
+            ResultSet results = null;
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            /** This is the method that starts the word frequency and counts application */
+            Map<String, Integer> wordMap = poemMap("src/main/resources/com/example/poemreadergui/testingRaven.html");
+
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/wordoccurrences", "root", "cop2805");
+            Statement statement = connection.createStatement();
+            List<Map.Entry<String, Integer>> list = sortByValueInDecreasingOrder(wordMap);
+            for (Map.Entry<String, Integer> entry : list) {
+                statement.executeUpdate("INSERT IGNORE INTO word value ('" + entry.getKey() + "','" + entry.getValue() + "')");
             /** This outputs the word and its corresponding frequency to a label on the scene */
            mapOutput.appendText( entry.getKey() + "\t" + entry.getValue() + "\n");
         }
-    }
+            results = statement.executeQuery("SELECT * from word");
+            while (results.next()) {
+                mapOutput.appendText(results.getString(1) + " \t " + results.getInt(2) + "\n");
+                System.out.println(results.getString(1) + " " + results.getInt(2));
+            }
 
+            statement.close();
+        connection.close();
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    }
     /** *This updates the scene label to display information regarding the class *@param buttonStart */
     @FXML
     public void buttonStart(ActionEvent e1) {
         buttonStart.setOnAction(e -> {
             mapOutput.setFont(Font.font("Britannic Bold", 30));
-            mapOutput.setText("Andrew Goodman" + "\n" + "Module 6 UI Design Assignment" + "\n" + "Prof. Walauskis");
+            mapOutput.setText("Andrew Goodman" + "\n" + "Module 10 Database Update" + "\n" + "Prof. Walauskis");
         });
     }
-
     /** *This updates the scene label to wipe the text from the scene *@param buttonClear */
     @FXML
     public void buttonClear(ActionEvent f1) {
@@ -128,6 +154,12 @@ public class HelloController {
             PoemReader();
         });
     }
+    @FXML
+    public void buttonDatabase(ActionEvent l1) {
+        buttonDatabase.setOnAction(e -> {
+            mapOutput.setText("Connected to Database. \nPlease clear board before continuing.");
+        });
+    }
     /** *This updates the scene label to display the PoemReader application in a basic font *@param buttonBasic */
     @FXML
     public void buttonBasic(ActionEvent h1) {
@@ -139,9 +171,12 @@ public class HelloController {
     /** *This closes the program *@param buttonQuit */
     @FXML
     public void buttonQuit(ActionEvent d1) {
+        System.out.println("disconnected.");
         System.exit(0);
+        }
     }
-}
+
+
 
 
 
